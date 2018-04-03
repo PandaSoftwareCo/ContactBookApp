@@ -1,0 +1,33 @@
+﻿<div ng-controller="DetailsController">
+    <div class="page-header text-center">
+        <h3>Details</h3>
+    </div>
+    <div class="alert alert-danger" ng-show="message != null">
+        {{message}}
+    </div>
+    <fieldset>
+        <legend>Contact</legend>
+
+        <div class="display-label">
+            <label>Name:</label>
+        </div>
+        <div class="display-field">
+            {{contact.Name}}
+        </div>
+        <div class="display-label">
+            <label>Age:</label>
+        </div>
+        <div class="display-field">
+            {{contact.Age}}
+        </div>
+        <div class="display-label">
+            <label>Address:</label>
+        </div>
+        <div class="display-field">
+            {{contact.Address}}
+        </div>
+    </fieldset>
+
+    <a href="#!/edit/{{contact.Id}}" class="btn btn-primary">Edit</a>
+    <a href="#!/list" class="btn btn-default">List</a>
+</div>

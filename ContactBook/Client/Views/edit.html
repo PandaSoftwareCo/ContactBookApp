@@ -1,0 +1,34 @@
+﻿<div ng-controller="EditController">
+    <div class="page-header text-center">
+        <h2>Edit Contact</h2>
+    </div>
+    <div class="alert alert-danger" ng-show="message != null">
+        {{message}}
+    </div>
+    <form name="editForm" novalidate>
+        <fieldset>
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input id="Name" name="Name" type="text" ng-model="contact.Name" required ng-maxlength="50" maxlength="50" class="form-control" />
+                <span class="alert-danger" ng-show="editForm.Name.$error.required">Name required</span>
+                <span class="alert-danger" ng-show="editForm.Name.$error.maxlength">Name invalid</span>
+            </div>
+            <div class="form-group">
+                <label for="Age">Age</label>
+                <input id="Age" name="Age" type="number" ng-model="contact.Age" required min="0" class="form-control" />
+                <span class="alert-danger" ng-show="editForm.Age.$invalid-required">Age required</span>
+            </div>
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <textarea id="Address" name="Address" cols="40" rows="5" ng-model="contact.Address" required ng-maxlength="50" maxlength="50" class="form-control"></textarea>
+                <span class="alert-danger" ng-show="editForm.Address.$error.required">Address required</span>
+                <span class="alert-danger" ng-show="editForm.Address.$error.maxlength">Address invalid</span>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary" ng-click="save(contact)" ng-disabled="editForm.$invalid">Save</button>
+                <a href="#!/list" class="btn btn-default">Cancel</a>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
